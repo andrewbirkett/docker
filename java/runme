@@ -1,0 +1,9 @@
+sudo docker run -it \
+     --user $(id -u) \
+     -v /tmp/.X11-unix/:/tmp/.X11-unix \
+     -v /dev/shm:/dev/shm \
+     --rm \
+     -e DISPLAY=$DISPLAY \
+     andrewbirkett/dev \
+     /bin/bash
+

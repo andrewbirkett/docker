@@ -1,0 +1,11 @@
+SRC=~/Projects/typescript/
+sudo docker container run -itt \
+ -v /tmp/.X11-unix/:/tmp/.X11-unix/ \
+ -v /dev/shm:/dev/shm  \
+ -v /home/adb/.emacs:/home/node/.emacs \
+ -v /home/adb/.emacs.d:/home/node/.emacs.d \
+ -e DISPLAY=$DISPLAY \
+--mount type=bind,src=$SRC,dst=/home/node/project \
+ --user $(id -u) \
+ --workdir /home/node/project \
+ abirkett/typescript /bin/bash

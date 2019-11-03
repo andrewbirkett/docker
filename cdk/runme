@@ -1,0 +1,7 @@
+SRC=~/Projects/cdk-n-docker-test/cdk/
+sudo docker container run -itt \
+ --mount type=bind,src=/home/adb/.aws,dst=/home/node/.aws \
+ --mount type=bind,src=$SRC,dst=/home/node/project \
+ --user $(id -u) \
+ --workdir /home/node/project \
+ abirkett/cdk /bin/bash

@@ -1,1 +1,1 @@
-# docker
+Various Dockerfiles for sandboxed development in various language/stacks.
